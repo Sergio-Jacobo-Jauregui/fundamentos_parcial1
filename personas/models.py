@@ -26,7 +26,6 @@ class Profesor(models.Model):
     titulo = models.CharField(max_length=100, help_text="Título académico, por ejemplo, 'Dr.', 'Mtro.', 'Ing.', etc.")
     correo = models.EmailField(unique=True, help_text="Correo electrónico institucional del estudiante.", validators=[EmailValidator()])
     cursos = models.ManyToManyField(Curso, related_name="profesores")
-    fecha_registro = models.DateTimeField(help_text="Fecha en la que se registró el estudiante.")
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"

@@ -1,4 +1,5 @@
 from django.db import models
+from django.dispatch import receiver
 from ciclos.models import Ciclo
 
 class Aula(models.Model):
@@ -21,8 +22,12 @@ class Curso(models.Model):
 class CursoAula(models.Model):
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE, related_name="curso_aulas")
     aula = models.ForeignKey(Aula, on_delete=models.CASCADE, related_name="curso_aulas")
-    horario = models.CharField(max_length=100, help_text="Horario del curso en el aula, por ejemplo, 'Lunes 8:00-10:00'.")
-    fecha_asignacion = models.DateTimeField(auto_now_add=True, help_text="Fecha en la que se asignó el curso al aula.")
+    hora_inicio = models.TimeField(max_length=100, help_text="Hora de inicio de este curso")
+    hora_fin = models.TimeField(max_length=100, help_text="Hora de fin de este curso")
 
     def __str__(self):
         return f"Curso: {self.curso.nombre}, Aula: {self.aula.nombre}, Horario: {self.horario}"
+
+    def clean(self):
+        print(self.hora_inicio)
+        print(self.hora_fin)

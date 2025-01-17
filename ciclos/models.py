@@ -7,4 +7,4 @@ class Ciclo(models.Model):
     activo = models.BooleanField(default=True, help_text="Indica si el ciclo está activo.")
 
     def __str__(self):
-        return self.grado
+        return str(self.grado)

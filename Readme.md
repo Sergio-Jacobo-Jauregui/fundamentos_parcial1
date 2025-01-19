@@ -46,10 +46,10 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados:
     
 3. **Instala django y las dependencias**:
     - **Django 4.x**
-    - **Instalar en ambos sistemas** (Windows/Linux) dentro de un entorno virtual:
-        ```bash
-        pip install django
-        ```  
+        - **Instalar en ambos sistemas** (Windows/Linux) dentro de un entorno virtual:
+            ```bash
+            pip install django
+            ```  
     - **Dependencias**    
         ```bash  
         pip install -r requirements.txt

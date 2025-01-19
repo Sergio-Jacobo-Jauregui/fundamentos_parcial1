@@ -14,12 +14,6 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados:
     sudo apt install python3 python3-pip
     ```
 
-- **Django 4.x**
-  - **Instalar en ambos sistemas** (Windows/Linux) dentro de un entorno virtual:
-    ```bash
-    pip install django
-    ```
-
 - **PostgreSQL** (o el gestor de base de datos que prefieras)  
   - **En Windows**: Descarga e instala PostgreSQL desde [postgresql.org](https://www.postgresql.org/download/windows/).
   - **En Linux**: Usa el siguiente comando:
@@ -39,22 +33,37 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados:
 
 2. **Crea un entorno virtual**:   
     - ## En Linux o macOS:
+    ```bash
     python3 -m venv env
     source env/bin/activate
+    ```
 
     - ## En Windows:
+     ```bash
     python -m venv env
     .\env\Scripts\activate
+    ```
     
-3. **Instala las dependencias**:       
-    pip install -r requirements.txt
+3. **Instala django y las dependencias**:
+    - **Django 4.x**
+    - **Instalar en ambos sistemas** (Windows/Linux) dentro de un entorno virtual:
+        ```bash
+        pip install django
+        ```  
+    - **Dependencias**    
+        ```bash  
+        pip install -r requirements.txt
+        ```
 
 3. **Configura la base de datos**: 
+    ```bash  
     psql -U postgres
     CREATE DATABASE parcial_fundamentos;
+    ```
     
     - ## En el archivo settings.py:
 
+    ```bash  
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -65,13 +74,20 @@ Antes de comenzar, asegúrate de tener los siguientes requisitos instalados:
             'PORT': '5432',
         }
     }
+    ```
 
+    ```bash 
     python manage.py migrate
-    
+      ```
 
 4. **Crear usuario admin**:
+    ```bash 
     python manage.py createsuperuser
-    ## Seguir las instrucciones
+     ```
+
+    Seguir las instrucciones
 
 5. **Correr el proyecto**:
+    ```bash 
     python manage.py runserver
+     ```

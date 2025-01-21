@@ -1,0 +1,18 @@
+que hemos creado:
+un programa pensado a futuro como un administrador de colegio/universidad de datos
+
+que es django:
+un framework, nos permite crear una db, y crear tipos de datos y nos desarrolla como profesionales
+
+Los alumnos eligen libremente sus cursos o hay algún sistema de créditos? -->
+El programa esta incompleto, nos concentramos en hacer la funcionalidad de curce de horarios
+Peor podemos crearlo, ya que es un pryecyo que sirve a futuro
+
+que es Curso o Aula o CursoAula?
+es un tipo de dato personalizado, tiene atributos, puede tener funciones, y simula la db
+
+c = Curso.objects.get(id=1)???
+para obtener o crear tipos de datos personalizados se usa get o create
+
+podemos implementar esto en nuestra aul virtual?
+si, es posible mejorar este trabajo y comuniarlo con el aula virtual, pero para eso necesitariamos otro servidor
